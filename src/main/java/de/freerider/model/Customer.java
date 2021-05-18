@@ -1,5 +1,7 @@
 package de.freerider.model;
 
+import org.springframework.stereotype.Component;
+
 public class Customer {
     String id;
     String lastName;
