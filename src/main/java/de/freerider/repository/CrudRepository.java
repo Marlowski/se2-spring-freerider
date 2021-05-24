@@ -17,7 +17,7 @@ import java.util.Optional;
  * @author Jens Schauder
  */
 
-public interface CrudRepository<T, ID> {
+public interface  CrudRepository<T, ID> {
 
 	/**
 	 * Saves a given entity. Use the returned instance for further operations as the save operation might have changed the

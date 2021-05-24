@@ -3,13 +3,13 @@ package de.freerider.model;
 import org.springframework.stereotype.Component;
 
 public class Customer {
-    String id;
-    String lastName;
-    String firstName;
-    String contact;
-    Status status;
+    private String id;
+    private String lastName;
+    private String firstName;
+    private String contact;
+    private Status status;
 
-    Customer(String lastName, String firstName, String contact) {
+    public Customer(String lastName, String firstName, String contact) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contact = contact;
