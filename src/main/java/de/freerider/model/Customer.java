@@ -2,6 +2,8 @@ package de.freerider.model;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 public class Customer {
     private String id;
     private String lastName;
@@ -22,7 +24,16 @@ public class Customer {
     }
 
     public void setId(String id) {
-        this.id = id;
+        //id is already set and not trying to reset it
+        if(id != null && this.id != null) {
+            return;
+            //reset exiting id
+        } else if(id == null && this.id != null) {
+            this.id = null;
+            //id is null and gets set
+        } else {
+            this.id = id;
+        }
     }
 
     public String getLastName() {
@@ -30,7 +41,7 @@ public class Customer {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName = Objects.requireNonNullElse(lastName, "");
     }
 
     public String getFirstName() {
@@ -38,7 +49,7 @@ public class Customer {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName = Objects.requireNonNullElse(firstName, "");
     }
 
     public String getContact() {
@@ -46,7 +57,7 @@ public class Customer {
     }
 
     public void setContact(String contact) {
-        this.contact = contact;
+        this.contact = Objects.requireNonNullElse(contact, "");
     }
 
     public Status getStatus() {
@@ -54,6 +65,7 @@ public class Customer {
     }
 
     public void setStatus(Status status) {
+        if(status == null) return;
         this.status = status;
     }
 }
