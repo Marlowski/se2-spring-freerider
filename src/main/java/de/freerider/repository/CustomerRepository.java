@@ -3,10 +3,7 @@ package de.freerider.repository;
 import de.freerider.model.Customer;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Optional;
+import java.util.*;
 
 
 @Component
@@ -26,8 +23,14 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 			entity.setId(id);
 			repository.put(id, entity);
 		} else {
-			//dont add object to repo if customer with same id already exists
-			if (!repository.containsKey(entity.getId())) {
+			if (repository.containsKey(entity.getId())) {
+				//Id already exists in repo -> overwrite elem and return old entity
+				S old = (S) repository.get(entity.getId());
+				delete(old);
+				repository.put(entity.getId(), entity);
+				return old;
+			} else {
+				//if Id of customer doesnt exist in repo, just add entity to it.
 				//new Customer with existing id
 				repository.put(entity.getId(), entity);
 			}
@@ -64,7 +67,7 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 
 	@Override
 	public Iterable<Customer> findAll() {
-		return repository.values();
+		return new ArrayList<>(repository.values());
 	}
 
 	@Override
@@ -73,7 +76,7 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 			Collection<Customer> savedEntities = new ArrayList<>();
 			for(String id : strings) {
 				if(id == null) throw new IllegalArgumentException("Passed entity cant be null!");
-				savedEntities.add(findById(id).get());
+				findById(id).ifPresent(savedEntities::add);
 			}
 			return savedEntities;
 		} else {
@@ -94,8 +97,8 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 
 	@Override
 	public void delete(Customer entity) throws IllegalArgumentException	 {
-		if(entity == null) throw new IllegalArgumentException("Passed entity cant be null!");
-		if(entity.getId() != null) repository.remove(entity.getId());
+		if(entity == null || entity.getId() == null) throw new IllegalArgumentException("Passed entity cant be null!");
+		repository.remove(entity.getId());
 	}
 
 	@Override
