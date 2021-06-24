@@ -27,6 +27,14 @@ public class CustomerTest {
     }
 
     @Test
+    void testNullCustomer() {
+        Customer testCustomer = new Customer(null, null, null);
+        assertNotNull(testCustomer.getFirstName());
+        assertNotNull(testCustomer.getLastName());
+        assertNotNull(testCustomer.getContact());
+    }
+
+    @Test
     void testSetId() {
         mats.setId("1234");
         assertNotNull(mats.getId());

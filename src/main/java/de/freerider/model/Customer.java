@@ -37,7 +37,9 @@ public class Customer {
     }
 
     public String getLastName() {
-        return lastName;
+        if (lastName == null) {
+            return "";
+        } else return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -45,7 +47,9 @@ public class Customer {
     }
 
     public String getFirstName() {
-        return firstName;
+        if (firstName == null) {
+            return "";
+        } else return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -53,7 +57,9 @@ public class Customer {
     }
 
     public String getContact() {
-        return contact;
+        if(contact == null) {
+            return "";
+        } else return contact;
     }
 
     public void setContact(String contact) {
