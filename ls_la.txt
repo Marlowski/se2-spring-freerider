@@ -1,0 +1,32 @@
+.:
+total 112
+drwxr-xr-x@ 16 marlonkerth  staff    512 13 Mai 15:30 .
+drwxr-xr-x  12 marlonkerth  staff    384 13 Mai 15:13 ..
+-rw-r--r--@  1 marlonkerth  staff   6148 13 Mai 14:39 .DS_Store
+-rw-r--r--@  1 marlonkerth  staff    395 30 Apr 17:12 .gitignore
+drwxr-xr-x  11 marlonkerth  staff    352 13 Mai 15:25 .idea
+drwxr-xr-x@  3 marlonkerth  staff     96 30 Apr 17:12 .mvn
+-rw-r--r--@  1 marlonkerth  staff    891 30 Apr 17:12 HELP.md
+-rw-r--r--   1 marlonkerth  staff   8000 13 Mai 15:17 customer-manager.iml
+-rw-r--r--   1 marlonkerth  staff    452 13 Mai 15:29 find_src.txt
+-rw-r--r--   1 marlonkerth  staff      0 13 Mai 15:30 ls_la.txt
+-rwxr-xr-x@  1 marlonkerth  staff  10070 30 Apr 17:12 mvnw
+-rw-r--r--@  1 marlonkerth  staff   6608 30 Apr 17:12 mvnw.cmd
+-rw-r--r--@  1 marlonkerth  staff   1246 13 Mai 15:12 pom.xml
+-rw-r--r--@  1 marlonkerth  staff   2488 13 Mai 15:28 spring_log.txt
+drwxr-xr-x@  5 marlonkerth  staff    160 30 Apr 19:12 src
+drwxr-xr-x  11 marlonkerth  staff    352 13 Mai 15:24 target
+
+target:
+total 33328
+drwxr-xr-x  11 marlonkerth  staff       352 13 Mai 15:24 .
+drwxr-xr-x@ 16 marlonkerth  staff       512 13 Mai 15:30 ..
+drwxr-xr-x   4 marlonkerth  staff       128 13 Mai 15:20 classes
+-rw-r--r--   1 marlonkerth  staff  17057589 13 Mai 15:24 customer-manager-0.0.1-SNAPSHOT.jar
+-rw-r--r--   1 marlonkerth  staff      3073 13 Mai 15:24 customer-manager-0.0.1-SNAPSHOT.jar.original
+drwxr-xr-x   3 marlonkerth  staff        96 30 Apr 19:14 generated-sources
+drwxr-xr-x   3 marlonkerth  staff        96 30 Apr 19:15 generated-test-sources
+drwxr-xr-x   3 marlonkerth  staff        96 30 Apr 19:15 maven-archiver
+drwxr-xr-x   3 marlonkerth  staff        96 30 Apr 19:14 maven-status
+drwxr-xr-x   6 marlonkerth  staff       192 13 Mai 15:24 surefire-reports
+drwxr-xr-x   3 marlonkerth  staff        96 13 Mai 15:20 test-classes

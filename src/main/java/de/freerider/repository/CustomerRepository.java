@@ -1,12 +1,14 @@
 package de.freerider.repository;
 
-import de.freerider.model.Customer;
+import de.freerider.datamodel.Customer;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 
 @Component
+@Qualifier("CustomerRepository_Impl")
 class CustomerRepository implements CrudRepository<Customer, String> {
 	private final IDGenerator idGen = new IDGenerator( "C", IDGenerator.IDTYPE.NUM, 6 );
 	private final HashMap<String, Customer> repository = new HashMap<String, Customer>();
